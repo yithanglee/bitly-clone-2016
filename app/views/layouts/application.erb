@@ -7,25 +7,38 @@
 	<header>
 
 	<nav>  
-	<a href="/">About</a> |
+	<a href="#popup1">Instruction</a> |
   <a href="/">Pricing</a> |
   <a href="/">Contact</a> |
   <a href="/">Login</a>
 
   </nav></header>
 
+
 		<div>
-			<div class="box1"><img src="/img/logo.png" style="position: absolute;height: 300px;width: 300px;">
-			</div>
+			<div class="box1"><img src="/img/logo.png" style="position: absolute;height: 300px;width: 300px;"></div>
+
 			<div class="box2"><%= yield %>	
 			<div class="error_messages"><%= @errors_messages if @errors_messages  %></div>
 			</div>	
 		</div>
+
 <footer>
 <a>Created by: Damien Lee</a>	|
 <a>Powered by <a href="https://www.ruby-lang.org/en/">Ruby</a>.
 </a>
 </footer>
+
+
+<div id="popup1" class="overlay">
+	<div class="popup">
+	<h2>I am a link shortener!</h2>
+	<a class="close" href="#">&times;</a>
+		<div class="content">
+		Copy and paste the URL you want to shorten, share the link to your friends, and see the counter click grow!
+		</div>
+	</div>
+</div>
 
 	</body>
 </html>
