@@ -1,4 +1,4 @@
-# require 'securerandom'
+require 'securerandom'
 
 class Url < ActiveRecord::Base
 	# This is Sinatra! Remember to create a migration!
@@ -6,35 +6,24 @@ class Url < ActiveRecord::Base
 validates :url, uniqueness: true
 validates :shorturl, uniqueness: true
 
+before_create :shorten
 
-def self.fuzzy
-
-	a = ("a".."z").to_a
-	b = ("A".."Z").to_a
-	c = []
-	c << a
-	c << b
-	c = c.flatten
-	n = []
-		for i in 1..10 do
-		 	n << c[rand(51)]
-		end
-		n = n.join
-		return n
-
+def shorten
+ self.shorturl = SecureRandom.hex(3)
 end
 
 
-def self.shortener(link)
-a = Url.find_by(url:link)
-	if a.nil?
-		p "this link doesnt exist, hence it will be shortened"
-		n = fuzzy
-		create(url:link, shorturl:n)
+
+
+def addclick
+# byebug
+		if self.clickcount == nil
+		self.update(clickcount:0)
 	else
-		p "this link already exist"
+		n = self.clickcount
+		n = n + 1
+		self.update(clickcount:n)
 	end
 end
-
 
 end

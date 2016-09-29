@@ -1,11 +1,11 @@
 <form action="/urls" method="post">
 	Enter URL:
-	<input type="text" name="abc" required>
+	<input type="text" name="long" required>
 	<input type="submit" value ="Submit">
 </form>
 
 <ol><% @urls.each do |a| %>
-<li> <%= a.url %><a href="<%= a.url %>"> <%= a.shorturl %></a> </li>
+<li> <%= a.url %><a href="<%= a.shorturl %>"> <%= a.shorturl %></a>  <%= a.clickcount %></li>
 
 <% end %></ol>
 

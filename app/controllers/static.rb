@@ -5,17 +5,21 @@ end
 
 post '/urls' do
 
-	slug = params.values_at("abc")
-	slug = slug.join
-	a = Url.shortener(slug)
-# Url.select(:shorturl).find_by(url:slug)
+	a = Url.new(url:params[:long])
+
+	a.save
 
 	redirect '/'
 end
 
 
-get '/'+ 'tYJJXWfIqA' do
+get '/:shorturl' do	
 
-  erb :"static/right"
+	place = Url.find_by(shorturl: params[:shorturl])
+	
+	place.addclick
+
+	redirect place.url
+
 
 end
