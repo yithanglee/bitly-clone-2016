@@ -1,8 +1,31 @@
 <html>
 	<head>
-		<title>Sinatra Framework</title>
+		<title>Pendek!</title>
 	</head>
-	<body>
-		<%= yield %>
+	<body class="first">
+	<link rel="stylesheet" type="text/css" href="/css/application.css">
+	<header>
+
+	<nav>  
+	<a href="/">About</a> |
+  <a href="/">Pricing</a> |
+  <a href="/">Contact</a> |
+  <a href="/">Login</a>
+
+  </nav></header>
+
+		<div>
+			<div class="box1"><img src="/img/logo.png" style="position: absolute;height: 300px;width: 300px;">
+			</div>
+			<div class="box2"><%= yield %>	
+			<div class="error_messages"><%= @errors_messages if @errors_messages  %></div>
+			</div>	
+		</div>
+<footer>
+<a>Created by: Damien Lee</a>	|
+<a>Powered by <a href="https://www.ruby-lang.org/en/">Ruby</a>.
+</a>
+</footer>
+
 	</body>
 </html>

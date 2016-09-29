@@ -1,12 +1,24 @@
 <form action="/urls" method="post">
-	Enter URL:
-	<input type="text" name="long" required>
-	<input type="submit" value ="Submit">
+	<center>Enter URL:<br>
+	<input type="text" name="long" required><br>
+	<input type="submit" value ="Submit"></center>
 </form>
 
-<ol><% @urls.each do |a| %>
-<li> <%= a.url %><a href="<%= a.shorturl %>"> <%= a.shorturl %></a>  <%= a.clickcount %></li>
+<center>
+<table>
+  <tr>
+    <th>URL</th>
+    <th>Pendek</th>
+    <th>Clicks</th>
+  </tr>
 
-<% end %></ol>
-
+<% @urls.each do |a| %>
+<tr>
+<td><%= a.url %></td>
+<td><a href="<%= a.shorturl %>"><%= a.shorturl %></a></td> 
+<td><%= a.clickcount %></td>
+</tr>
+<% end %>
+</table>
+</center>
 
