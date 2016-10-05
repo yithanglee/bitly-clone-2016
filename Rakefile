@@ -3,7 +3,8 @@ require 'rspec/core/rake_task'
 
 # Include environment settings
 require ::File.expand_path('../config/environments/init', __FILE__)
-
+# require ::File.expand_path('../db/urls', __FILE__)
+# require_relative ('db/urls')
 # Require all ActiveSupport's class and extensions
 require 'active_support/core_ext'
 

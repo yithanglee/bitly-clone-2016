@@ -1,3 +1,24 @@
+				$(".table").append(
+					'<tr>' +
+					'<td>' +
+					abc.url +
+					'</td>'+
+					'<td>'+
+						'<a href="/' +
+						abc.shorturl +
+						'">' +
+						abc.shorturl +
+						'</a>'+
+						'</td>'+
+						'<td>' +
+						abc.clickcount +
+						'</td>' +
+						'</tr>' );
+
+
+
+
+
 #Sinatra Web Server
 ## Repo details
 | Details   |  | 

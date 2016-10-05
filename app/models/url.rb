@@ -4,7 +4,7 @@ class Url < ActiveRecord::Base
 	# This is Sinatra! Remember to create a migration!
 
 validates :url, uniqueness: true 
-validates :url, format: {with: URI::regexp(['https'])} 
+validates :url, format: {with: URI::regexp(['https','http'])} 
 validates :shorturl, uniqueness: true
 before_create :shorten
 
@@ -13,7 +13,6 @@ before_create :shorten
 def shorten
  self.shorturl = SecureRandom.hex(3)
 end
-
 
 
 def addclick

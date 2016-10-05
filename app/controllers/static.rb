@@ -5,17 +5,19 @@ end
 
 post '/urls' do
 
-	a = Url.new(url:params[:long])
+	@url = Url.new(url:params[:long])
 
-	if a.save
-		redirect '/'
+	if @url.save
+		return @url.to_json
+			# @urls = Url.all
+  	# 	erb :"static/index"
 	else
 		#show errors messages
-		@errors_messages = a.errors.full_messages
+		@errors_messages = {errors: @url.errors.full_messages}
+	return @errors_messages.to_json
 
-		@urls = Url.all
-		erb :"static/index"
 	end
+
 end
 
 

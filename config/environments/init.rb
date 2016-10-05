@@ -44,7 +44,7 @@ set :public_folder, 'public'
 
 # Setup Models (M) and its database
 require APP_ROOT.join('config', 'database')
-
+# require APP_ROOT.join('db', 'urls')
 # Setup views (V)
 set :views, File.join(APP_ROOT, "app", "views")
 set :erb, layout: :'layouts/application'

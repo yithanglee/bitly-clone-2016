@@ -5,20 +5,20 @@
 </form>
 
 <center>
-<table>
+<table class="table">
   <tr>
     <th>URL</th>
     <th>Pendek</th>
     <th>Clicks</th>
   </tr>
 
-<% @urls.each do |a| %>
-<tr>
-<td><%= a.url %></td>
-<td><a href="<%= a.shorturl %>"><%= a.shorturl %></a></td> 
-<td><%= a.clickcount %></td>
-</tr>
-<% end %>
+	<% @urls.each do |a| %>
+			<tr>
+			<td><%= a.url %></td>
+			<td><a href="<%= a.shorturl %>"><%= a.shorturl %></a></td> 
+			<td><%= a.clickcount %></td>
+		</tr>
+	<% end %>
 </table>
 </center>
 
